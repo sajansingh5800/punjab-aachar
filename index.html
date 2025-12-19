@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Punjab Aachar | Authentic Punjabi Pickles</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1604908554161-5a4c5d4e4f1a') center/cover no-repeat;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.5);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    nav {
+      background-color: #fcbf49;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    nav a:hover { color: #d62828; }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #d62828;
+    }
+
+    .pickle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .pickle-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pickle-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+
+    .pickle-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .pickle-card h3 {
+      margin: 15px 0 10px;
+      color: #f77f00;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .in-stock { background: #2a9d8f; }
+    .limited { background: #f4a261; }
+    .out { background: #e63946; }
+
+    select {
+      padding: 6px;
+      margin-top: 6px;
+      border-radius: 4px;
+    }
+
+    .pickle-card p { font-size: 0.95rem; }
+
+    .about, .contact {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    footer {
+      background-color: #003049;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .sticky-order {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg,#d62828,#f77f00);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      z-index: 999;
+    }
+
+    .sticky-order a {
+      color: #fff;
+      text-decoration: underline;
+      margin-left: 10px;
+    }
+
+    .float-call, .float-whatsapp {
+      position: fixed;
+      right: 15px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #fff;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .float-call { bottom: 90px; background:#0a9396; }
+    .float-whatsapp { bottom: 30px; background:#25D366; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover { opacity: 0.9; }
+
+    @media (max-width: 600px){
+      header h1 { font-size: 1.8rem; }
+      header p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;">
+      <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 07_03_05 PM.png" alt="Punjab Aachar Logo" style="width:350px;height:auto;" />
+      <div>
+        <h1>Punjab Aachar | ਪੰਜਾਬ ਆਚਾਰ</h1>
+        <p class="tagline">Authentic Punjabi Pickles · ਘਰੇਲੂ ਪੰਜਾਬੀ ਸਵਾਦ</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#pickles">Pickles</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="https://instagram.com/panjab_.aachar" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width:24px;height:24px;" />
+      Instagram
+    </a>
+  </nav>
+
+  <!-- Sticky Order -->
+  <div class="sticky-order">
+    🫙 Order Fresh Punjabi Aachar Now 
+    <a href="https://wa.me/917027066405?text=Hi%2C%20I%20want%20to%20order%20Punjab%20Aachar" target="_blank">Order on WhatsApp</a>
+  </div>
+
+  <div class="container">
+    <!-- Pickle Section -->
+    <section id="pickles">
+      <h2 class="section-title">Our Pickle Varieties</h2>
+      <div class="pickle-grid">
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 08_39_30 PM.png" alt="Mango Pickle" />
+          <h3>Aam da Aachar</h3>
+          <p>Traditional Punjabi mango pickle made with mustard oil and spices.</p>
+          <span class="badge in-stock">In Stock</span>
+          <p><strong>Select Quantity:</strong></p>
+          <select>
+            <option>250g – ₹130</option>
+            <option selected>500g – ₹250</option>
+            <option>1kg – ₹480</option>
+          </select>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Aam%20da%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 08_41_16 PM.png" alt="Lemon Pickle" />
+          <h3>Nimbu Aachar</h3>
+          <p>Tangy and spicy lemon pickle with authentic Punjabi masalas.</p>
+          <p><strong>Price:</strong> ₹220 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Nimbu%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 08_42_20 PM.png" alt="Chilli Pickle" />
+          <h3>Hari Mirch Aachar</h3>
+          <p>Spicy green chilli pickle for true spice lovers.</p>
+          <p><strong>Price:</strong> ₹200 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Hari%20Mirch%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 08_44_39 PM.png" alt="Mixed Pickle" />
+          <h3>Mixed Punjabi Aachar</h3>
+          <p>A flavorful mix of mango, carrot, lemon, and chilli.</p>
+          <p><strong>Price:</strong> ₹260 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Mixed%20Punjabi%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 08_46_25 PM.png" alt="Turnip Pickle" />
+          <h3>Shalgam Aachar</h3>
+          <p>Traditional Punjabi turnip pickle with rich spices.</p>
+          <p><strong>Price:</strong> ₹210 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Shalgam%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 09_01_09 PM.png" alt="Muli Pickle" />
+          <h3>Muli Aachar</h3>
+          <p>Crispy white radish pickle with traditional Punjabi spices.</p>
+          <p><strong>Price:</strong> ₹210 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Muli%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 09_03_41 PM.png" alt="Carrot Pickle" />
+          <h3>Gajar Aachar</h3>
+          <p>Sweet and spicy carrot pickle made in Punjabi style.</p>
+          <p><strong>Price:</strong> ₹220 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Gajar%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="" alt="Dela Pickle" />
+          <h3>Dela Aachar</h3>
+          <p>Unique Punjabi pickle made from wild apple (Dela).</p>
+          <p><strong>Price:</strong> ₹280 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Dela%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="pickle-card">
+          <span class="badge limited">🔥 Best Seller</span>
+          <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 09_07_43 PM.png" alt="Galgal Pickle" />
+          <h3>Galgal Aachar</h3>
+          <p>Traditional Himalayan lemon pickle with bold flavors.</p>
+          <p><strong>Price:</strong> ₹260 / 500g</p>
+          <a href="https://wa.me/917027066405?text=I%20want%20to%20order%20Galgal%20Aachar" class="btn">Order on WhatsApp</a>
+        </div>   
+
+<section id="branding" class="about">
+      <h2 class="section-title">Brand Identity</h2>
+      <p><strong>Packaging Label Includes:</strong></p>
+      <ul>
+        <li>Brand Logo & Name</li>
+        <li>Pickle Name & Net Weight</li>
+        <li>Ingredients</li>
+        <li>Manufacturing & Expiry Date</li>
+        <li>FSSAI License Number</li>
+        <li>Contact Details</li>
+      </ul>
+    </section>
+
+    <section id="about" class="about">
+      <h2 class="section-title">About Punjab Aachar</h2>
+      <p>
+        Punjab Aachar brings you the homemade taste of authentic Punjabi pickles.
+        Our recipes are inspired by traditional methods passed down through generations,
+        using fresh ingredients and pure mustard oil.
+      </p>
+    </section>
+
+    <section id="whatsapp" class="contact">
+      <h2 class="section-title">WhatsApp order process</h2>
+      <pre>
+🙏 Thank you for contacting Punjab Aachar🌶️🥭
+
+Please share:
+1️⃣ Pickle Name
+2️⃣ Quantity (250g / 500g / 1kg)
+3️⃣ Delivery Address
+4️⃣ Payment Mode (UPI / COD)
+
+We will confirm your order shortly.
+📦 All India Delivery Available
+      </pre>
+    </section>
+
+    <section id="order" class="contact">
+      <h2 class="section-title">How to Order</h2>
+      <ol>
+        <li>Select your favorite pickle</li>
+        <li>Click <strong>Order on WhatsApp</strong></li>
+        <li>Share quantity & delivery address</li>
+        <li>Pay via UPI / COD available</li>
+      </ol>
+      <p><strong>🚚 Delivery:</strong> All India delivery in 3–7 working days</p>
+    </section>
+
+    <section id="combos" class="about">
+      <h2 class="section-title">🔥 Best Seller Combo Packs</h2>
+      <ul>
+        <li><strong>Punjabi Starter Combo:</strong> Aam + Nimbu + Mirch (₹650)</li>
+        <li><strong>Spicy Lover Combo:</strong> Mirch + Galgal + Mixed (₹700)</li>
+        <li><strong>Family Combo:</strong> 5 Pickles × 500g (₹1200)</li>
+      </ul>
+      <p><a class="btn" href="https://wa.me/917027066405?text=I%20want%20to%20order%20Combo%20Pack">Order Combo on WhatsApp</a></p>
+    </section>
+
+    <section id="reviews" class="about">
+  <h2 class="section-title">Customer Love ❤️ | ਗਾਹਕਾਂ ਦੀ ਰਾਏ</h2>
+  <div class="pickle-grid">
+    <div class="pickle-card">
+      <p>⭐️⭐️⭐️⭐️⭐️<br>“Bilkul ghar jaisa swaad!”<br><strong>– Amritsar</strong></p>
+    </div>
+    <div class="pickle-card">
+      <p>⭐️⭐️⭐️⭐️⭐️<br>“Best Punjabi Aachar ever.”<br><strong>– Delhi</strong></p>
+    </div>
+    <div class="pickle-card">
+      <p>⭐️⭐️⭐️⭐️⭐️<br>“Highly recommended!”<br><strong>– Mumbai</strong></p>
+    </div>
+  </div>
+</section>
+
+    <section id="upi" class="contact">
+      <h2 class="section-title">UPI Payment</h2>
+      <p>Scan the QR below to pay via UPI (Google Pay / PhonePe / Paytm)</p>
+      <p><strong>UPI ID:</strong>7027066405@yesbank</p>
+    </section>
+
+    <section id="label" class="contact">
+  <h2 class="section-title">Packaging & Label Preview 🏷️</h2>
+         <p><strong>Brand:</strong> Punjab Aachar | ਪੰਜਾਬ ਆਚਾਰ</p>
+         <p><strong>Net Weight:</strong> 250g / 500g / 1kg</p>
+         <p><strong>Ingredients:</strong> Fresh vegetables, mustard oil, Punjabi spices</p>
+         <p><strong>FSSAI No:</strong> XXXXXXXXXXXXXX</p>
+         <p><em>Print-ready label (round & square jars supported)</em></p>
+</section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <p><strong>📞 Phone / WhatsApp:</strong> +91-7027066405 / +91-9671018333</p>
+      <p><strong>📧 Email:</strong> punjabaachar@email.com</p>
+      <p><strong>📍 Manufacturing Unit:</strong> sirsa,haryana, India</p>
+      <p><strong>💳 Payment:</strong> UPI, Google Pay, PhonePe, Paytm,debit card,credit card, COD</p>
+    </section>
+  </div>
+
+  <style>
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #25D366;
+      color: cream;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+
+  <section class="about">
+      <h2 class="section-title">Instagram & Online Presence</h2>
+      <p>📸 Follow us on Instagram: <strong>@panjab_.aachar</strong></p>
+      <p>🎥 Daily reels: Pickle making, packing & customer reviews</p>
+      <p>🛍️ Instagram DM & WhatsApp orders supported</p>
+    </section>
+
+    <section class="contact">
+      <h2 class="section-title">Google Business Profile</h2>
+      <p>Create your free Google Business Profile to appear on Google Maps & Search.</p>
+      <p><strong>Name:</strong> Punjab Aachar</p>
+      <p><strong>Category:</strong> Food Producer / Homemade Pickles</p>
+      <p><strong>Location:</strong> haryana, India</p>
+    </section>
+
+
+    <!-- Other sections (Branding, About, WhatsApp, Combos, Reviews, Contact) remain unchanged -->
+
+  </div>
+
+  <!-- Floating Buttons -->
+  <a href="tel:7027066405" class="float-call" title="Call Now">📞</a>
+  <a href="https://wa.me/919671018333?text=Hi%2C%20I%20want%20to%20order%20Punjab%20Aachar" class="float-whatsapp" title="WhatsApp Orders">💬</a>
+
+  <footer>
+    <img src="C:\Users\Admin\Downloads\ChatGPT Image Dec 18, 2025, 07_03_05 PM.png" alt="Punjab Aachar Logo" style="width:100px;display:block;margin:0 auto 0px;" />
+    <p>© 2025 Punjab Aachar | Made with ❤️ in haryana</p>
+  </footer>                                         
+ 
+    <div class="floating-buttons">
+    <a href="https://wa.me/917027066405?text=Hi%2C%20I%20want%20to%20order%20Punjab%20Aachar" target="_blank" title="WhatsApp Orders">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:100px;display:block;margin:50auto 0px;" />
+    </a>
+
+    <a href="https://wa.me/919671018333?text=Hi%2C%20I%20want%20to%20order%20Punjab%20Aachar" target="_blank" title="WhatsApp Orders 2">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:100px;display:block;margin:50 auto 0px;" />
+
+    </a>
+
+    <a href="tel:+919671018333" title="Call Now">
+      <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" style="width:100px;display:block;margin:50 auto 0px;" />
+
+    </a>
+
+    <a href="https://instagram.com/panjab_.aachar" target="_blank" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"style="width:100px;display:block;margin:50 auto 0px;" />
+
+    </a>
+  </div>
+
+</body>
+</html>
